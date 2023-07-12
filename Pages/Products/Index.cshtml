@@ -1,0 +1,37 @@
+﻿@page
+@model Master_Data.Pages.Products.IndexModel
+@{
+}
+<!--HTML-->
+<br />
+<h2>MASTER DATA : PRODUCT</h2>
+<a class="btn btn-primary btn-sm" href="/Products/Add">Add</a>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Marking</th>
+            <th>Product Name</th>
+            <th>Machine Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listProducts)
+        {
+            <tr>
+                <td>@item.product_id</td>
+                <td>@item.marking</td>
+                <td>@item.product_name</td>
+                <td>@item.machine_name</td>
+                <td>@item.description</td>
+                <td>
+                    <a class="btn btn-warning btn-sm" href="/Products/Edit?id=@item.product_id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Products/Delete?id=@item.product_id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
