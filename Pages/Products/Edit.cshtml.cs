@@ -12,7 +12,7 @@ namespace Master_Data.Pages.Products
 
         public void OnGet()
         {
-            String product_id = Request.Query["produt_id"];
+            String product_id = Request.Query["product_id"];
 
             try
             {
@@ -41,7 +41,9 @@ namespace Master_Data.Pages.Products
             catch (Exception ex)
             {
                 errorMessage = ex.Message;
+                return;
             }
+            successMessage = "New data successfully been added";
         }
     }
 }

@@ -5,8 +5,13 @@
 <!--HTML-->
 <br />
 <h2>MASTER DATA : PRODUCT</h2>
-<a class="btn btn-primary btn-sm" href="/Products/Add">Add</a>
 
+<div>
+    <a class="btn btn-primary btn-md" href="/Products/Add">Add</a>
+    Sort By: 
+    <input type="radio" name="product" /> <label for="product">Product</label>
+    <input type="radio" name="machine"/> <label for="machine">Machine</label>
+</div>
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -28,8 +33,8 @@
                 <td>@item.machine_name</td>
                 <td>@item.description</td>
                 <td>
-                    <a class="btn btn-warning btn-sm" href="/Products/Edit?id=@item.product_id">Edit</a>
-                    <a class="btn btn-danger btn-sm" href="/Products/Delete?id=@item.product_id">Delete</a>
+                    <a class="btn btn-warning btn-sm" href="/Products/Edit?product_id=@item.product_id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Products/Delete?product_id=@item.product_id">Delete</a>
                 </td>
             </tr>
         }
